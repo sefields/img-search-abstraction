@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Image Search Abstraction Layer</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="shortcut icon" href="https://cdn.hyperdev.com/us-east-1%3A52a203ff-088b-420f-81be-45bf559d01b1%2Ffavicon.ico" type="image/x-icon"/>
+      <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+      <link href="/public/style.css" rel="stylesheet" type="text/css">
+   </head>
+
+   <body>
+      <div class="row">
+        
+         <div class="col-md-3">
+         </div>
+         
+         <div class="col-md-6">
+         <h1>Image Search Abstraction Layer</h1>
+         <h3>by Sam</h3>
+        <h3>
+          Endpoint: https://sam-img-search.glitch.me/
+          <br><br>
+          Input a search term. The service outputs some images and metadata. History can also be fetched.
+          <br><br>
+          Code Samples:
+        </h3>
+        <center>
+          <table style="width:100%">
+            <tr>
+              <td style="width:50%">
+                <div class="well">
+                  Search for images. 'offset' parameter provides pagination.
+                  <pre><code>
+https://sam-img-search.glitch.me/cats/offset=2
+                  </code></pre>
+                  The above would return an array of 10 objects with the format:
+                  <pre><code>
+{
+<b>url:</b> "http://www.bing.com/cr?IG=5668C1E6AD564ACA9A39C3E9306FA144&CID=0398CCCBA7EA63B9059AC630A6EC624D&rd=1&h=MjXSGmEDP167j70Lkicw_ySHN_eJJVpF9N0RgvcZPdQ&v=1&r=http%3a%2f%2fi.huffpost.com%2fgen%2f964776%2fimages%2fo-CATS-KILL-BILLIONS-facebook.jpg&p=DevEx,5009.1",
+<b>snippet:</b> "Domestic Cats Kill Billions Of Mice And Birds Per Year ...",
+<b>thumbnail:</b> "https://tse1.mm.bing.net/th?id=OIP.ETFxELWtgKQwMlcoccq-SAEsEs&pid=Api",
+<b>context:</b> "www.huffingtonpost.com/2013/01/30/domestic-cats-kill-billions-mice..."
+}
+                  </code></pre>
+                </div>
+              </td>
+              <td style="width:50%">
+                <div class="well">
+                  Check the search history
+                  <pre><code>
+https://sam-img-search.glitch.me/latest
+                  </code></pre>
+                  The above would return an array of 10 objects with the format:
+                  <pre><code>
+{
+<b>term:</b> "cats",
+<b>when:</b> "2017-09-12T00:10:44.112Z"
+},
+                  </code></pre>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </center>
+        </div>
+        
+        <div class="col-md-3">
+        </div>
+        
+      </div>
+   </body>
+
+</html>
